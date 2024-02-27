@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Link Loom',
-  description: 'Show yourself to the world through links',
+  description: 'Show yourself to the world through links ✨🖇️',
 };
 
 export default function RootLayout({
