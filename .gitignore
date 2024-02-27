@@ -1,0 +1,18 @@
+# Dependencies
+node_modules
+
+# Next.js
+.next
+out
+
+# Production
+build
+
+# Typescript
+next-env.d.ts
+
+# Development container
+.devcontainer
+
+# VSCode congiguration
+.vscode
