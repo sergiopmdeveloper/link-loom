@@ -16,3 +16,9 @@ next-env.d.ts
 
 # VSCode congiguration
 .vscode
+
+# Vercel configuration
+.vercel
+
+# Environment variables
+.env
