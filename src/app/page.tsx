@@ -1,3 +1,13 @@
+import MainList from "./components/list/list";
+
+
 export default function Home() {
-  return <h1 className='font-semibold'>Hello world!</h1>;
+  return <>
+  <header>
+    <p>Comentario opcional</p>
+  </header>
+  <MainList />
+  <footer>
+      Elemento al pie
+  </footer></>
 }
