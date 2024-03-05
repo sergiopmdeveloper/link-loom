@@ -1,4 +1,5 @@
 import { signUp } from '@/app/actions/auth/sign-up';
+import SubmitButton from '@/app/sign-up/components/SubmitButton';
 import Link from 'next/link';
 
 /**
@@ -61,12 +62,7 @@ export default function Page() {
               Sign in
             </Link>
           </span>
-          <button
-            className='mt-5 rounded bg-gray-700 py-2 text-white hover:brightness-125'
-            type='submit'
-          >
-            Send
-          </button>
+          <SubmitButton />
         </form>
       </div>
     </main>
