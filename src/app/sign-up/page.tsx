@@ -1,3 +1,4 @@
+import { signUp } from '@/app/actions/auth/sign-up';
 import Link from 'next/link';
 
 /**
@@ -15,7 +16,7 @@ export default function Page() {
       </Link>
       <div className='w-[30rem] rounded bg-slate-100 p-6'>
         <h1 className='mb-5 text-3xl font-semibold'>Sign up</h1>
-        <form className='flex flex-col'>
+        <form className='flex flex-col' action={signUp}>
           <div className='flex flex-col gap-4'>
             <div className='flex flex-col gap-1.5'>
               <label htmlFor='name'>Name</label>
