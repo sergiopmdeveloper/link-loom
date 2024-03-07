@@ -1,12 +1,27 @@
+'use client';
+
 import { signUp } from '@/app/actions/auth/sign-up';
 import SubmitButton from '@/app/sign-up/components/SubmitButton';
+import { SignUpState } from '@/app/types/auth';
 import Link from 'next/link';
+import { useFormState } from 'react-dom';
+
+// States
+
+const signUpState: SignUpState = {
+  name: [],
+  email: [],
+  password: [],
+  userAlreadyExists: false,
+};
 
 /**
  * Sign-up page component.
  * @returns The component.
  */
 export default function Page() {
+  const [formState, formAction] = useFormState(signUp, signUpState);
+
   return (
     <main className='relative flex h-screen w-screen items-center justify-center'>
       <Link
@@ -15,11 +30,16 @@ export default function Page() {
       >
         Back to home
       </Link>
-      <div className='w-[30rem] rounded bg-slate-100 p-6'>
+      <div className='relative w-[30rem] rounded bg-slate-100 p-6'>
+        {formState.userAlreadyExists && (
+          <span className='absolute -top-8 right-0 rounded bg-red-300 px-1.5 py-0.5 text-xs text-red-700'>
+            User already exists
+          </span>
+        )}
         <h1 className='mb-5 text-3xl font-semibold'>Sign up</h1>
-        <form className='flex flex-col' action={signUp}>
+        <form className='flex flex-col' action={formAction}>
           <div className='flex flex-col gap-4'>
-            <div className='flex flex-col gap-1.5'>
+            <div className='relative flex flex-col gap-1.5'>
               <label htmlFor='name'>Name</label>
               <input
                 className='rounded px-2 py-2'
@@ -29,8 +49,13 @@ export default function Page() {
                 placeholder='Your name...'
                 autoComplete='username'
               />
+              {formState.name.length > 0 && (
+                <span className='absolute right-0 top-0.5 rounded bg-red-300 px-1.5 py-0.5 text-xs text-red-700'>
+                  {formState.name[0]}
+                </span>
+              )}
             </div>
-            <div className='flex flex-col gap-1.5'>
+            <div className='relative flex flex-col gap-1.5'>
               <label htmlFor='email'>Email</label>
               <input
                 className='rounded px-2 py-2'
@@ -40,8 +65,13 @@ export default function Page() {
                 placeholder='Your email...'
                 autoComplete='email'
               />
+              {formState.email.length > 0 && (
+                <span className='absolute right-0 top-0.5 rounded bg-red-300 px-1.5 py-0.5 text-xs text-red-700'>
+                  {formState.email[0]}
+                </span>
+              )}
             </div>
-            <div className='flex flex-col gap-1.5'>
+            <div className='relative flex flex-col gap-1.5'>
               <label htmlFor='password'>Password</label>
               <input
                 className='rounded px-2 py-2'
@@ -51,6 +81,11 @@ export default function Page() {
                 placeholder='Your password...'
                 autoComplete='current-password'
               />
+              {formState.password.length > 0 && (
+                <span className='absolute right-0 top-0.5 rounded bg-red-300 px-1.5 py-0.5 text-xs text-red-700'>
+                  {formState.password[0]}
+                </span>
+              )}
             </div>
           </div>
           <span className='mt-5 text-sm'>
