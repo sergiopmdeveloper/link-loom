@@ -23,23 +23,23 @@ export default function Page() {
   const [formState, formAction] = useFormState(signUp, signUpState);
 
   return (
-    <main className='relative flex h-screen w-screen items-center justify-center'>
+    <main className='relative flex h-screen w-screen items-center justify-center px-5'>
       <Link
-        className='absolute right-5 top-5 rounded bg-gray-700 px-2 py-1.5 text-white hover:brightness-125'
+        className='absolute right-5 top-5 rounded bg-gray-700 px-2 py-1.5 text-sm text-white hover:brightness-125 sm:text-base'
         href='/'
       >
         Back to home
       </Link>
-      <div className='relative w-[30rem] rounded bg-slate-100 p-6'>
+      <div className='relative w-full rounded bg-slate-100 p-6 sm:w-[30rem]'>
         {formState.userAlreadyExists && (
           <span className='absolute -top-8 right-0 rounded bg-red-300 px-1.5 py-0.5 text-xs text-red-700'>
             User already exists
           </span>
         )}
-        <h1 className='mb-5 text-3xl font-semibold'>Sign up</h1>
+        <h1 className='mb-5 text-2xl font-semibold sm:text-3xl'>Sign up</h1>
         <form className='flex flex-col' action={formAction}>
           <div className='flex flex-col gap-4'>
-            <div className='relative flex flex-col gap-1.5'>
+            <div className='relative flex flex-col gap-1.5 text-sm sm:text-base'>
               <label htmlFor='name'>Name</label>
               <input
                 className='rounded px-2 py-2'
@@ -55,7 +55,7 @@ export default function Page() {
                 </span>
               )}
             </div>
-            <div className='relative flex flex-col gap-1.5'>
+            <div className='relative flex flex-col gap-1.5 text-sm sm:text-base'>
               <label htmlFor='email'>Email</label>
               <input
                 className='rounded px-2 py-2'
@@ -71,7 +71,7 @@ export default function Page() {
                 </span>
               )}
             </div>
-            <div className='relative flex flex-col gap-1.5'>
+            <div className='relative flex flex-col gap-1.5 text-sm sm:text-base'>
               <label htmlFor='password'>Password</label>
               <input
                 className='rounded px-2 py-2'
@@ -88,7 +88,7 @@ export default function Page() {
               )}
             </div>
           </div>
-          <span className='mt-5 text-sm'>
+          <span className='mt-5 text-xs sm:text-sm'>
             Already have an account?{' '}
             <Link
               className='cursor-pointer text-blue-500 underline'

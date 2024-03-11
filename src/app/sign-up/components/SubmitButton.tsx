@@ -13,7 +13,7 @@ export default function SubmitButton() {
   return (
     <button
       className={cn(
-        'mt-5 rounded bg-gray-700 py-2 text-white hover:brightness-125',
+        'mt-5 rounded bg-gray-700 py-2 text-sm text-white hover:brightness-125 sm:text-base',
         pending && 'cursor-not-allowed opacity-75',
       )}
       type='submit'
