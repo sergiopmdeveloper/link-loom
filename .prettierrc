@@ -14,5 +14,6 @@
   "endOfLine": "auto",
   "htmlWhitespaceSensitivity": "ignore",
   "useTabs": false,
-  "embeddedLanguageFormatting": "auto"
+  "embeddedLanguageFormatting": "auto",
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
