@@ -1,13 +1,24 @@
-import MainList from "./components/list/list";
+import Branches from "./components/branches/branches";
 
 
 export default function Home() {
   return <>
   <header>
-    <p>Comentario opcional</p>
+    {/* 
+      TODO This data should be obtained from database.
+      In link loom is an h1 inside a div. But I think
+      a header could be a better practise.
+    */}
   </header>
-  <MainList />
+  <div className="container mx-auto mt-8">
+    <Branches />
+  </div>
   <footer>
-      Elemento al pie
+    {/*
+      TODO Social Media links should be here.
+      From my point of views this is a footer.
+      In link loom they doesn't have that section
+      tagged as a footer.
+    */}
   </footer></>
 }
