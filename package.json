@@ -13,7 +13,7 @@
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "style-to-js": "^1.1.10"
+    "style-to-js": "^1.1.12"
   },
   "devDependencies": {
     "@types/node": "^20",

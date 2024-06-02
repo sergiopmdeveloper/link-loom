@@ -8,7 +8,7 @@ interface SingleBranchProps {
   styleString: string;
 }
 
-const SingleBranch: React.FC<SingleBranchProps> = ({ content, imgSrc, styleString }) => {
+export default function SingleBranch ({ content, imgSrc, styleString }: SingleBranchProps) {
   const styleObject = parse(styleString); 
 
   return (
@@ -22,5 +22,3 @@ const SingleBranch: React.FC<SingleBranchProps> = ({ content, imgSrc, styleStrin
     </li>
   );
 };
-
-export default SingleBranch;

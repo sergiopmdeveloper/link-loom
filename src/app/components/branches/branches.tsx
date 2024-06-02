@@ -1,7 +1,6 @@
-import React from 'react';
 import SingleBranch from '../single_branch/single_branch';
 
-const Branches: React.FC = () => {
+export default function Branches () {
   const exampleContent = 'Selena Gomez'
   const exampleSrc = 'https://ugc.production.linktr.ee/07e8b953-10eb-47b2-9654-95b5164bd563_Screenshot-2024-02-27-at-5.34.09-PM.png?io=true&size=thumbnail-stack-v1_0'
   const exampleStyle = "width: '100px'"
@@ -20,5 +19,3 @@ const Branches: React.FC = () => {
     </section>
   );
 };
-
-export default Branches;
